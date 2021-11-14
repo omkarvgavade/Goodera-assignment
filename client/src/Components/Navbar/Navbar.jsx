@@ -6,7 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import Jobs from '../JobsDisplay/Jobs';
 function Navbar() {
     const [age, setAge] = React.useState('');
 
@@ -68,6 +68,7 @@ function Navbar() {
                     </div>
                 </SearchStyled>
             </NavbarStyled>
+            <Jobs />
         </MainLayout>
     )
 }
@@ -79,7 +80,7 @@ padding:0 6rem;
 const NavbarStyled = styled.div`
 
 width: 100%;
-height: 20rem;
+height: 312px;
 background: linear-gradient(274.83deg, #5DB0DF 0.58%, #5D7ADF 74.3%);
 padding:2rem;
 
@@ -124,13 +125,13 @@ position: absolute;
 width: 1154px;
 height: 100px;
 left: 143px;
-top: 314px;
+top: 260px;
 
 background: #FFFFFF;
 box-shadow: 2px 12px 8px 2px rgba(0, 0, 0, 0.05);
 border-radius: 24px;
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 4fr 4fr 3fr;
 justify-content: center;
 align-items: center;
 &>div:nth-child(1){
@@ -174,7 +175,7 @@ color: #7B7B7B;
 .searchButton{
     cursor: pointer;
         position: relative;
-    left: 2rem;
+
 }
 
 .locationSelect{

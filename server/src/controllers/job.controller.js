@@ -3,6 +3,11 @@ const Job = require('../models/job.model');
 const router = express.Router();
 
 
+router.post("", async (req, res) => {
+    const job = await Job.create(req.body);
+    return res.status(201).json({ job })
+})
+
 router.get("", async (req, res) => {
     const jobs = await Job.find().lean().exec();
     return res.status(200).json({ jobs })
