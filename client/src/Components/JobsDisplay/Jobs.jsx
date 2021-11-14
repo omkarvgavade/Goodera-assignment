@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Card from '../JobCard/Card'
-function Jobs() {
+function Jobs({ jobsData }) {
+    console.log(jobsData, "yues")
     return (
         <JobsStyled>
-            <Card />
+
+            <Card jobsData={jobsData} />
+
         </JobsStyled>
     )
 }
@@ -14,6 +17,8 @@ height: 100vh;
 
 background: #E5E5E5;
 padding: 5rem 2.5rem;
+display: grid;
+min-height:50rem;
 `
 
 export default Jobs

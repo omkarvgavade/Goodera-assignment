@@ -21,30 +21,38 @@ button:hover{
 }
 `
 
-function Card() {
+function Card({ jobsData }) {
     return (
         <CardData>
+
             <div className="container">
                 <div className="row">
-                    <div className="col col-12  g-3 col-lg-6 col-xxl-6" >
-                        <div className="card mb-3 p-2" >
-                            <div className="row g-0">
-                                <div className="col-sm-4 p-3">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Blank_button.svg/1200px-Blank_button.svg.png" className="img-fluid  p-4" alt="..." />
-                                </div>
-                                <div className="col-sm-8">
-                                    <div className="card-body">
-                                        <h2 className="card-title ">Card title</h2>
-                                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <button type="button" class="btn btn-outline-danger float-end py-1 px-4">View Details</button>
+                    {jobsData ? jobsData.map((el) => {
+                        return <div className="col col-12  g-3 col-lg-6 col-xxl-6" >
+                            <div className="card mb-3 p-2" >
+                                <div className="row g-0">
+                                    <div className="col-sm-4 p-3">
+                                        <img src={el.image} className="img-fluid  p-4" alt="..." />
+                                    </div>
+                                    <div className="col-sm-8">
+                                        <div className="card-body">
+                                            <h2 className="card-title ">{el.title}</h2>
+                                            <p className="card-text">{el.description}</p>
+                                            <button type="button" class="btn btn-outline-danger float-end py-1 px-4">View Details</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }) : <h1>No jobs are available</h1>}
+
 
                 </div>
+
+
             </div>
+
+
         </CardData>
     )
 }

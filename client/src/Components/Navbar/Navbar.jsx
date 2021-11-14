@@ -1,19 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 // import WorkIcon from '@mui/icons-material/Work';
-import SearchIcon from '@mui/icons-material/Search';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import { useEffect, useState } from 'react'
 import Jobs from '../JobsDisplay/Jobs';
+import axios from 'axios'
 function Navbar() {
-    const [age, setAge] = React.useState('');
-
-    const handleChange = (event) => {
-        setAge(event.target.value);
-    };
-
+    const [jobsData, setJobsData] = useState([])
+    const getData = () => {
+        axios.get(`http://localhost:2345/jobs`).then((res) => {
+            console.log(res.data, "KJUhki")
+            setJobsData(res.data.jobs)
+            return;
+        })
+    }
+    useEffect(() => {
+        getData()
+    }, [])
     return (
         <MainLayout>
             <NavbarStyled>
@@ -49,11 +51,11 @@ function Navbar() {
                         </svg>
                         <select name="" style={{ border: "none", outline: "none" }} id="">
                             <option value="" selected>Select Location</option>
-                            <option value="berlin">Berlin</option>
-                            <option value="delhi">Delhi</option>
-                            <option value="mumbai">Mumbai</option>
-                            <option value="delhi">Delhi</option>
-                            <option value="pune">Pune</option>
+                            <option value="berlin">Berlin,Germany</option>
+                            <option value="delhi">Delhi,India</option>
+                            <option value="mumbai">Mumbai,India</option>
+                            <option value="delhi">Delhi,India</option>
+                            <option value="pune">Pune,India</option>
                         </select>
                     </div>
                     <div>
@@ -68,7 +70,7 @@ function Navbar() {
                     </div>
                 </SearchStyled>
             </NavbarStyled>
-            <Jobs />
+            <Jobs jobsData={jobsData} />
         </MainLayout>
     )
 }
