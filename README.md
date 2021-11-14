@@ -1,6 +1,6 @@
 # Goodera Hackathon
 
-#How to run this project
+# How to run this project
 1)first clone this repository
 2) run command in terminal "npm install"
 1) For running front end part you need to go inside client folder and run command "npm start"
