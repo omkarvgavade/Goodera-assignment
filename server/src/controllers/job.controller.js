@@ -12,7 +12,6 @@ router.post("", async (req, res) => {
 router.get("", async (req, res) => {
     if (req.query.title) {
         let title = req.query.title;
-        title = title.toLowerCase()
         const job = await Job.find({ "title": title }).lean().exec();
         return res.status(200).json({ job })
     } else if (req.query.location) {
