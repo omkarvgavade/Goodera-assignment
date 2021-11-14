@@ -26,15 +26,13 @@ function Navbar() {
             </HeadingStyled>
             <SearchStyled>
                 <div>
-                    <div>
-                        <SearchIcon />  <input type="text" />
-                    </div>
-                    <div>
+                    <SearchIcon />  <input type="text" />
+                </div>
+                <div>
 
-                    </div>
-                    <div>
-                        <button>Search</button>
-                    </div>
+                </div>
+                <div>
+                    <button>Search</button>
                 </div>
             </SearchStyled>
         </NavbarStyled>
@@ -85,6 +83,28 @@ display: grid;
 
 `
 const SearchStyled = styled.div`
-width: 100%;
+position: absolute;
+width: 1154px;
+height: 100px;
+left: 143px;
+top: 314px;
+
+background: #FFFFFF;
+box-shadow: 2px 12px 8px 2px rgba(0, 0, 0, 0.05);
+border-radius: 24px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+justify-content: center;
+align-items: center;
+&>div:nth-child(1){
+display: flex;
+justify-content: center;
+align-items: center;
+input{
+    width: 80%;
+    border: none;
+    outline: none;
+}
+}
 `
 export default Navbar
