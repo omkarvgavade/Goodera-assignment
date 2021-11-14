@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 // import WorkIcon from '@mui/icons-material/Work';
+import SearchIcon from '@mui/icons-material/Search';
 function Navbar() {
     return (
         <NavbarStyled>
@@ -23,6 +24,19 @@ function Navbar() {
                 </div>
                 <p>Browse through thousands of full time and part time near you</p>
             </HeadingStyled>
+            <SearchStyled>
+                <div>
+                    <div>
+                        <SearchIcon />  <input type="text" />
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+                        <button>Search</button>
+                    </div>
+                </div>
+            </SearchStyled>
         </NavbarStyled>
     )
 }
@@ -30,7 +44,7 @@ const NavbarStyled = styled.div`
 
 width: 100%;
 height: 20rem;
-background-color: rgb(93,135,223);
+background: linear-gradient(274.83deg, #5DB0DF 0.58%, #5D7ADF 74.3%);
 padding: 2rem 6rem;
 
 
@@ -69,5 +83,8 @@ display: grid;
  padding-left: 1rem;
  color: white;
 
+`
+const SearchStyled = styled.div`
+width: 100%;
 `
 export default Navbar
